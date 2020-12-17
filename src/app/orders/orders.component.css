@@ -1,0 +1,12 @@
+.navbar-nav.navbar-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+}
+
+nav,
+.navbar-brand,
+.navbar-nav a {
+  font-family: Helvetica;
+}

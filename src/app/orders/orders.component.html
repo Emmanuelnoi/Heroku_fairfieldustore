@@ -1,0 +1,102 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-danger fixed-top">
+  <div class="container">
+    <a class="navbar-brand">
+      <img src="https://www.fairfield.edu/store/img/f-logo.png" height="28" alt="CoolBrand">
+    </a>
+    <a class="navbar-brand" href="/store">FairfieldU Store</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarResponsive" aria-controls="navbarResponsive"
+            aria-expanded="false" aria-label="Toggle navigation" (click)="toggleCollapsed()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="navbarResponsive" [ngClass]="{'collapse': collapsed, 'navbar-collapse': true}">
+      <ul class="nav navbar-nav navbar-center">
+        <li> <a >{{username}}</a></li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/store">Store</a>
+        </li>
+        <li class="nav-item">
+          <button  class="nav-link text-black-50" (click)="logoutUser()" >Logout</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<img src="https://www.fairfield.edu/store/img/slider/students-slide2.jpg" class="img-fluid" alt="Responsive image">
+<span class="d-block p-2 bg-white text-white"></span>
+
+<div class="card-deck mb-3 text-center">
+  <div class="card mb-4 shadow-sm">
+    <div class="card-header">
+      <h4 class="my-0 font-weight-normal">order</h4>
+    </div>
+    <div class="card-body">
+      <ul>
+        <li *ngFor="let order of orders.productOrders">
+          {{ order.product.name }} - ${{ order.product.price }} x {{ order.quantity}} pcs.
+        </li>
+      </ul>
+      <h1 class="card-title pricing-card-title">Total amount: ${{total}}</h1>
+
+      <button type="button" class="btn btn-lg btn-primary" (click)="pay()" *ngIf="!paid">Pay</button>
+
+      <div class="alert alert-success" role="alert" *ngIf="paid">
+        <strong>Congratulation!</strong> You successfully made the order.
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<span class="d-block p-2 bg-white text-white"></span>
+<!-- Footer -->
+<footer class="page-footer font-small bg-danger pt-4">
+
+  <!-- Footer Elements -->
+  <div class="container">
+    <div class="footer-copyright position-absolute text-center text-black-50 py-3">
+      <a class="text-black-50" href=""> </a>
+    </div>
+    <!-- Social buttons -->
+    <ul class="list-unstyled list-inline text-center">
+      <li class="list-inline-item">
+        <a class="btn-floating btn-fb mx-1">
+          <i class="fab fa-facebook-f"> </i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-tw mx-1">
+          <i class="fab fa-twitter"> </i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-gplus mx-1">
+          <i class="fab fa-google-plus-g"> </i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-li mx-1">
+          <i class="fab fa-linkedin-in"> </i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-dribbble mx-1">
+          <i class="fab fa-dribbble"> </i>
+        </a>
+      </li>
+    </ul>
+    <!-- Social buttons -->
+
+  </div>
+  <!-- Footer Elements -->
+
+  <!-- Copyright -->
+
+
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
