@@ -14,10 +14,10 @@ const routes: Routes = [
   {path: '***', redirectTo: '/' }
 ];
 
-export const routing = RouterModule.forRoot(routes);
+export const routing = RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' });
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],
   exports: [RouterModule]
 })
 export  class AppRoutingModule { }
