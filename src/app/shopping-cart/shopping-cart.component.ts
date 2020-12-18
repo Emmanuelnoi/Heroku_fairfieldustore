@@ -19,6 +19,8 @@ export class ShoppingCartComponent implements OnInit, OnDestroy {
   currentUser: User;
   sub: Subscription;
 
+
+  // tslint:disable-next-line:no-output-on-prefix
   @Output() onOrderFinished: EventEmitter<boolean>;
 
   constructor(private storeService: StoreService,
