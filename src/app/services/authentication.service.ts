@@ -15,7 +15,7 @@ export class AuthenticationService {
   constructor(private http: HttpClient) {
     this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
     this.currentUser = this.currentUserSubject.asObservable();
-    this.urL = `//fairfieldustorebackend-env.eba-bz9f98sd.us-east-1.elasticbeanstalk.com/api/v1`;
+    this.urL = `http://fairfieldustorebackend-env.eba-bz9f98sd.us-east-1.elasticbeanstalk.com/api/v1`;
   }
 
   public get currentUserValue(): User {
