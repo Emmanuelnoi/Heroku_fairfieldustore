@@ -4,10 +4,11 @@ import {ProductOrders} from '../models/product-orders.model';
 import {Subject} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 
-@Injectable()
+@Injectable({ providedIn: 'any' })
 export class StoreService {
-  private productsUrl = '/api/products';
-  private ordersUrl = '/api/orders';
+
+  private productsUrl = '/api/v1/getAllProducts';
+  private ordersUrl = '/api/v1/getAllOrders';
 
   private productOrder: ProductOrder;
   private orders: ProductOrders = new ProductOrders();
@@ -23,10 +24,12 @@ export class StoreService {
   TotalChanged = this.totalSubject.asObservable();
 
   constructor(private http: HttpClient) {
+
   }
 
   getAllProducts() {
     return this.http.get(this.productsUrl);
+
   }
 
   saveOrder(order: ProductOrders) {

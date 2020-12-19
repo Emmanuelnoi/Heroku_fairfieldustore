@@ -33,7 +33,7 @@ import {JwtInterceptor} from './helper/jwt.interceptor';
     AppRoutingModule
   ],
   providers: [StoreService,
-    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true,},
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true}
 ],
   bootstrap: [AppComponent]
