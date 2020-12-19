@@ -1,6 +1,6 @@
 {
   "/api": {
-    "target": "http://fairfieldustorebackend-env.eba-bz9f98sd.us-east-1.elasticbeanstalk.com",
+    "target": "https://fairfieldustorebackend-env.eba-bz9f98sd.us-east-1.elasticbeanstalk.com",
     "secure": true
   }
 }
